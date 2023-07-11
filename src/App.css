@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+
+:root {
+  --bg-color: #373737;
+  --text-color-black: #000000;
+  --text-color-white: #FAFAFA;
+  --red-: #E12D2D;
+  --ligth-grey: #ACAAAA;
+}
+
+body {
+  /* 1vw is equal to 1% of the screen’s width, and 1vh is equal to 1% of the screen’s height. */
+  padding: calc(1rem + 0.5vw);
+  background: var(--bg-color);
+  
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 1vh;
+  padding: 1rem;
+}
+
+.cover > * {
+  margin-block: calc(1rem + 0vw);
+}
+
+.cover > :first-child:not(timer) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child:not(timer) {
+  margin-block-end: 0;
+}
+
+.cover > timer {
+  margin-block: auto;
+}
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(1rem + 1vh);
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc(( 30rem - 100%) * 999);
+}
+
+.switcher > :nth-last-child(n+ 3),
+.switcher > :nth-last-child(n+ 3) ~ * {
+  flex-basis: 100%;
+}
+  
+
+header {
+  font-family:'Montserrat', sans-serif;
+  font-size: calc(1rem + 1vw);
+  font-weight: 700;
+  color: var(--text-color-white);
+
+}
+
+.timer-board {
+  /* border: solid 0.3rem green; */
+  background: black;
+  margin-top: calc(1rem + 2vw);
+  border-radius: 8px;
+  padding: calc(1rem + 2vh);
+  max-height: 70vh;
+  
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: calc(1rem + 4vw);
+  margin: 0 calc(1rem + 20vw);
+
+}
+
+.timer {
+  color: var(--red-);
+  font-size: calc(1rem + 7vw);
+  font-weigth: 700;
+  font-family:'Montserrat', sans-serif;
+  background: black;
+  display: flex;
+  justify-content: center;
+  padding: calc(1rem + 2vh);
+}
+
+.start {
+  /* border: solid 0.3rem blue; */
+  font-size: calc(1rem + 3vw);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+
+}
+
+.choices button {
+  font-size: calc(1rem + 0.01vw);
+  font-family:'Montserrat', sans-serif;
+  font-weight: 700;
+  min-width: 10vh;
+  padding: 1vh; 
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: none;
+  background: var(--ligth-grey)
+
+}
+
+.start button {
+  font-size: calc(1rem + 1vw);
+  min-width: calc(1rem + 12vw);
+  min-height:calc(1rem + 3vw);
+  font-family:'Montserrat', sans-serif;
+  font-weight: 700;
+  padding: calc(1rem + 0.001vw); 
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+
+
+}
+
+
+
+
+
+
+

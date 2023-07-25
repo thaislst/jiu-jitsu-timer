@@ -9,7 +9,7 @@
 
 :root {
   --bg-color: #373737;
-  --text-color-black: #000000;
+  --text-color-black: #313131;
   --text-color-white: #FAFAFA;
   --red-: #E12D2D;
   --ligth-grey: #ACAAAA;
@@ -72,7 +72,7 @@ header {
 
 .timer-board {
   /* border: solid 0.3rem green; */
-  background: black;
+  background: var(--text-color-black);
   margin-top: calc(1rem + 2vw);
   border-radius: 8px;
   padding: calc(1rem + 2vh);

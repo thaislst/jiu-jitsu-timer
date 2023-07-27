@@ -1,23 +1,28 @@
   import { useState } from 'react'
   import useAnimationFrame from './hooks/useAnimationFrame'
   import Display from './components/Display'
+  import ActionButton from './components/ActionButton'
 
   import './App.css'
+import TabButton from './components/TabButton'
+
 
   const MODES = {
-    'luta': 7*60,
-    'descanso': 3*60,
+    'luta': 6*60,
+    'descanso': 40,
   }
-
 
 
   function App() {  
 
     const [timeInSeconds, setTimeInSeconds] = useState(MODES['luta']);
     const [isRunning, setIsRunning] = useState(false);
+    const [mode, setMode] = useState('luta')
+    
 
     const handleStart = () => {
       setIsRunning(true);
+      
     };
 
     // Using useAnimationFrame hook here
@@ -30,15 +35,24 @@
         if(currentTime > 0) {
           return currentTime
         }
-
-        handleStop()
-        return 0
       })
     });
 
+    const handlePause = () => {
+      setIsRunning(false);
+      return 0
+    }
+
+    const handleChangeMode = (newMode) => () => changeMode(newMode)
+
+    const changeMode = (newMode) => {
+      handlePause()
+      setTimeInSeconds(MODES[newMode])
+      setMode(newMode)
+    }
+
     return (
       <>
-        <body>
           <header>
             Jiu-Jitsu
             <br /><span>Timer</span>
@@ -46,8 +60,8 @@
 
           <div className='timer-board cover'>
             <div className='choices switcher'>
-              <button>Luta</button>
-              <button>Desncanso</button>
+              <TabButton onClick={handleChangeMode('luta')} >Luta</TabButton>
+              <TabButton onClick={handleChangeMode('descanso')}>Descanso</TabButton>
             </div>
             <div className='timer'>
             <Display timeInSeconds={timeInSeconds}  />
@@ -55,12 +69,9 @@
             
 
             <div className="start">
-              <button onClick={handleStart}>
-                START
-              </button>    
+              <ActionButton onStart={handleStart} onPause={handlePause} isRunning={isRunning}/>
             </div>
-          </div>
-        </body>   
+          </div>  
       </>
     )
   }

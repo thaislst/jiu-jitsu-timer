@@ -2,16 +2,13 @@
   import useAnimationFrame from './hooks/useAnimationFrame'
   import Display from './components/Display'
   import ActionButton from './components/ActionButton'
-
+  import TabButton from './components/TabButton'
   import './App.css'
-import TabButton from './components/TabButton'
-
 
   const MODES = {
     'luta': 6*60,
     'descanso': 40,
   }
-
 
   function App() {  
 
@@ -25,7 +22,6 @@ import TabButton from './components/TabButton'
       
     };
 
-    // Using useAnimationFrame hook here
     useAnimationFrame(deltaTime => {
       if(!isRunning) {
         return;
@@ -63,11 +59,11 @@ import TabButton from './components/TabButton'
               <TabButton onClick={handleChangeMode('luta')} >Luta</TabButton>
               <TabButton onClick={handleChangeMode('descanso')}>Descanso</TabButton>
             </div>
+            
             <div className='timer'>
             <Display timeInSeconds={timeInSeconds}  />
             </div>
             
-
             <div className="start">
               <ActionButton onStart={handleStart} onPause={handlePause} isRunning={isRunning}/>
             </div>

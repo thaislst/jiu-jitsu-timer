@@ -9,9 +9,7 @@ export default function ActionButton({isRunning, onStart, onPause}) {
   }
 
   return (
-    <button
-    onClick={handleClick}
-    >
+    <button onClick={handleClick}>
       {isRunning? 'PARAR' : 'COMEÇAR'}
     </button>
   )

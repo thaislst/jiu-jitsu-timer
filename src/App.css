@@ -11,8 +11,8 @@
   --bg-color: #373737;
   --text-color-black: #313131;
   --text-color-white: #FAFAFA;
-  --red-: #E12D2D;
-  --ligth-grey: #ACAAAA;
+  --red-: #E05A5A;
+  --ligth-grey: #615E5E;
 }
 
 body {
@@ -53,7 +53,7 @@ body {
 
 .switcher > * {
   flex-grow: 1;
-  flex-basis: calc(( 30rem - 100%) * 999);
+  flex-basis: calc(( 10rem - 100%) * 999);
 }
 
 .switcher > :nth-last-child(n+ 3),
@@ -76,27 +76,30 @@ header {
   margin-top: calc(1rem + 2vw);
   border-radius: 8px;
   padding: calc(1rem + 2vh);
-  max-height: 70vh;
+  max-height: calc(1rem + 90vh);
+  
   
 }
 
 .choices {
   display: flex;
   justify-content: center;
-  gap: calc(1rem + 4vw);
-  margin: 0 calc(1rem + 20vw);
+  gap: calc(1rem + 2vh);
+  margin: calc(1rem + 1vw) calc(1rem + 20vw);
 
 }
 
 .timer {
   color: var(--red-);
-  font-size: calc(1rem + 7vw);
+  font-size: calc(1rem + 10vw);
   font-weigth: 700;
   font-family:'Montserrat', sans-serif;
   background: black;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   padding: calc(1rem + 2vh);
+  max-height: calc(1rem + 35vh);
 }
 
 .start {
@@ -112,25 +115,29 @@ header {
   font-size: calc(1rem + 0.01vw);
   font-family:'Montserrat', sans-serif;
   font-weight: 700;
-  min-width: 10vh;
-  padding: 1vh; 
+  color: white;
+  min-width: calc(7rem + 1vw);
+  padding: 1.5vh; 
   text-transform: uppercase;
   border-radius: 6px;
   border: none;
-  background: var(--ligth-grey)
+  background: var(--ligth-grey);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 }
 
 .start button {
   font-size: calc(1rem + 1vw);
-  min-width: calc(1rem + 12vw);
-  min-height:calc(1rem + 3vw);
+  color: var(--bg-color);
+  min-width: calc(5rem + 5vw);
+  min-height:calc(3rem + 2vw);
   font-family:'Montserrat', sans-serif;
-  font-weight: 700;
-  padding: calc(1rem + 0.001vw); 
+  font-weight: 600;
+  padding: calc(1rem + 0.01vw); 
   text-transform: uppercase;
   border-radius: 8px;
   border: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 
 }

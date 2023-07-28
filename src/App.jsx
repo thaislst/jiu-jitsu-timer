@@ -56,8 +56,8 @@
 
           <div className='timer-board cover'>
             <div className='choices switcher'>
-              <TabButton onClick={handleChangeMode('luta')} >Luta</TabButton>
-              <TabButton onClick={handleChangeMode('descanso')}>Descanso</TabButton>
+              <TabButton onClick={handleChangeMode('luta')} selected={mode === 'luta'} >Luta</TabButton>
+              <TabButton onClick={handleChangeMode('descanso')} selected={mode === 'descanso'}>Descanso</TabButton>
             </div>
             
             <div className='timer'>

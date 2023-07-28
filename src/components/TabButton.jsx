@@ -1,6 +1,6 @@
 export default function TabButton({selected, onClick, children}) {
   return(
-    <button onClick={onClick}>
+    <button className={`${selected ? 'selected' : ''}`} onClick={onClick}>
       {children}
     </button>
   )

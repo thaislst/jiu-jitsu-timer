@@ -126,6 +126,15 @@ header {
 
 }
 
+button:hover {
+  transform: translateY(-0.15em);
+}
+
+.selected {
+  color: var(--red-);
+  background: var(--red-);
+}
+
 .start button {
   font-size: calc(1rem + 1vw);
   color: var(--bg-color);
